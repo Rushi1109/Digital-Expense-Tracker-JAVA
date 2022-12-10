@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1069676889354",
+    "project_id": "digitalexpensetracker-b0eac",
+    "storage_bucket": "digitalexpensetracker-b0eac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069676889354:android:b02872d42b0c67c63766f3",
+        "android_client_info": {
+          "package_name": "com.example.digitalexpensetracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069676889354-kipc3lomqcd59up4ornbqhpfgr92ponj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9bSRFEnuaL-IQCZFOqAz3joNjw_mydtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069676889354-kipc3lomqcd59up4ornbqhpfgr92ponj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
