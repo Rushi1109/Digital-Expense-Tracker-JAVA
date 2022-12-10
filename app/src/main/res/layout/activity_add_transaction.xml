@@ -77,12 +77,20 @@
                 android:inputType="text"
                 android:padding="15dp"
                 android:textAlignment="textStart" />
+            
+            <Spinner
+                android:id="@+id/spinner_category"
+                android:background="@drawable/spinner_category_bg"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/editText_add_transaction_note"
+                android:layout_marginTop="7dp"/>
 
             <LinearLayout
                 android:id="@+id/LL_transaction_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/editText_add_transaction_note"
+                android:layout_below="@+id/spinner_category"
                 android:layout_marginTop="7dp"
                 android:background="@drawable/border"
                 android:orientation="horizontal"

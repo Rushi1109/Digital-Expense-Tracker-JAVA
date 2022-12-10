@@ -154,6 +154,7 @@
             app:cardCornerRadius="40dp">
 
             <RelativeLayout
+                android:id="@+id/RL_add_transaction_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"

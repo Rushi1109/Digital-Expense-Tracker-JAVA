@@ -3,4 +3,16 @@
     <string name="register"><u>Register</u></string>
     <string name="click_here_to_reset"><u>Click here to Reset</u></string>
     <string name="update_email"><u>Update Email?</u></string>
+    
+    <string-array name="array_categories">
+        <item>Entertainment</item>
+        <item>Education</item>
+        <item>Food</item>
+        <item>Health Care</item>
+        <item>Insurance</item>
+        <item>Home Appliance</item>
+        <item>Investments</item>
+        <item>Rent</item>
+        <item>Other</item>
+    </string-array>
 </resources>
