@@ -210,12 +210,12 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.makeText(RegisterActivity.this, "User registered successfully, Please verify your email", Toast.LENGTH_LONG).show();
 
                                 // Open user profile after successful registration
-//                                Intent intent = new Intent(RegisterActivity.this, UserProfileActivity.class);
+                                Intent intent = new Intent(RegisterActivity.this, DashboardActivity.class);
 //
 //                                // To prevent user form returning back to Register Activity on pressing back button after registration
-//                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//                                startActivity(intent);
-//                                finish();    // To close Register Activity
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                                finish();    // To close Register Activity
                             } else {
                                 Toast.makeText(RegisterActivity.this, "User registration failed, Please try again", Toast.LENGTH_SHORT).show();
                             }

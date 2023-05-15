@@ -88,14 +88,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-//        Button btnSMS = findViewById(R.id.button_sms);
-//        btnSMS.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
-//            }
-//        });
-
         // Login button activity
         Button btnLogin = findViewById(R.id.button_login_user);
         btnLogin.setOnClickListener(new View.OnClickListener() {

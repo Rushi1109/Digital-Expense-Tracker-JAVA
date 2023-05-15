@@ -19,8 +19,7 @@
             android:exported="false" />
         <activity
             android:name=".AddTransactionActivity"
-            android:exported="false"
-            android:parentActivityName=".DashboardActivity">
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -74,6 +73,33 @@
             android:name=".ForgotPasswordActivity"
             android:exported="true"
             android:parentActivityName=".LoginActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".UpdateEmailActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".DeleteProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

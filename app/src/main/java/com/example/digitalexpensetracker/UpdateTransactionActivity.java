@@ -46,6 +46,7 @@ public class UpdateTransactionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_transaction);
+        getSupportActionBar().setTitle("Update Transaction");
 
         updateTransactionBtn = findViewById(R.id.update_transaction_button);
         deleteTransactionBtn = findViewById(R.id.delete_transaction_button);

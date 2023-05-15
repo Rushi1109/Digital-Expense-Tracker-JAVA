@@ -120,7 +120,7 @@ public class DashboardActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.referesh_menu, menu);
+        getMenuInflater().inflate(R.menu.common_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -135,6 +135,32 @@ public class DashboardActivity extends AppCompatActivity {
             } catch (Exception e){
                 Toast.makeText(DashboardActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
+        }
+        else if(id == R.id.menu_update_email){
+            Intent intent = new Intent(DashboardActivity.this, UpdateEmailActivity.class);
+            startActivity(intent);
+        }
+        else if(id == R.id.menu_change_pwd){
+            Intent intent = new Intent(DashboardActivity.this, ChangePasswordActivity.class);
+            startActivity(intent);
+        }
+        else if(id == R.id.menu_delete_profile){
+            Intent intent = new Intent(DashboardActivity.this, DeleteProfileActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        else if(id == R.id.menu_logout){
+            firebaseAuth.signOut();
+            Toast.makeText(DashboardActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(DashboardActivity.this, LoginActivity.class);
+
+            // Clear stack to prevent going back to user profile
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();       // Close Dashboard
+        }
+        else{
+            Toast.makeText(DashboardActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
         }
         return super.onOptionsItemSelected(item);
     }
