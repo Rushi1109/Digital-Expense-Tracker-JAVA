@@ -136,6 +136,12 @@ public class DashboardActivity extends AppCompatActivity {
                 Toast.makeText(DashboardActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
+        else if(id == R.id.pie_chart){
+            Intent intent = new Intent(DashboardActivity.this, PieChartActivity.class);
+            intent.putExtra("Income", sumIncome);
+            intent.putExtra("Expense", sumExpense);
+            startActivity(intent);
+        }
         else if(id == R.id.menu_update_email){
             Intent intent = new Intent(DashboardActivity.this, UpdateEmailActivity.class);
             startActivity(intent);

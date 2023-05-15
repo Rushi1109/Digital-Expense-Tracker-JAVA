@@ -8,6 +8,9 @@
         app:showAsAction="always"
         android:id="@+id/refresh_page"/>
 
+    <item android:title="Pie Chart"
+    android:id="@+id/pie_chart"/>
+
     <item android:title="Update Email"
         android:id="@+id/menu_update_email"/>
 

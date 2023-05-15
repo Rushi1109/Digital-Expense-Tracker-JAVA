@@ -15,6 +15,9 @@
         android:theme="@style/Theme.DigitalExpenseTracker"
         tools:targetApi="31">
         <activity
+            android:name=".PieChartActivity"
+            android:exported="false" />
+        <activity
             android:name=".UpdateTransactionActivity"
             android:exported="false" />
         <activity
@@ -77,7 +80,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".UpdateEmailActivity"
             android:exported="false"
@@ -86,7 +88,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".ChangePasswordActivity"
             android:exported="false"
@@ -95,7 +96,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".DeleteProfileActivity"
             android:exported="false"
