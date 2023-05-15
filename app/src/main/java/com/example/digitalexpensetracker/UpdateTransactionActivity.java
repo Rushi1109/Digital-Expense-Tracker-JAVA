@@ -197,26 +197,48 @@ public class UpdateTransactionActivity extends AppCompatActivity {
                     Toast.makeText(UpdateTransactionActivity.this, "Please select the expense mode", Toast.LENGTH_SHORT).show();
                     radioButtonExpenseMode.setError("Expense mode is required");
                     radioGroupExpenseMode.requestFocus();
+                } else {
+                    firebaseFirestore.collection("Expenses").document(firebaseAuth.getUid())
+                            .collection("Notes").document(id)
+                            .update("amount", amount, "note", note, "date", date, "category", newCategory, "mode", newMode, "type", newType)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    onBackPressed();
+                                    Toast.makeText(UpdateTransactionActivity.this, "Updated the details", Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(UpdateTransactionActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            });
                 }
-                else{
-                        firebaseFirestore.collection("Expenses").document(firebaseAuth.getUid())
-                                .collection("Notes").document(id)
-                                .update("amount", amount, "note", note, "date", date, "category", newCategory, "mode", newMode, "type", newType)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void unused) {
-                                        onBackPressed();
-                                        Toast.makeText(UpdateTransactionActivity.this, "Updated the details", Toast.LENGTH_SHORT).show();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(UpdateTransactionActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                    }
-                }
-            });
-        }
+            }
+        });
+
+        deleteTransactionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firebaseFirestore.collection("Expenses").document(firebaseAuth.getUid())
+                        .collection("Notes")
+                        .document(id)
+                        .delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                onBackPressed();
+                                Toast.makeText(UpdateTransactionActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(UpdateTransactionActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+        });
     }
+}

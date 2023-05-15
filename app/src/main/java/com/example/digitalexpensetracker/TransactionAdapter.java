@@ -41,25 +41,25 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         if(priority.equals("Expense")){
             holder.priority.setBackgroundResource(R.drawable.red_shape);
             holder.amount.setText(model.getAmount());
-            holder.amount.setTextColor(this.context.getResources().getColor(R.color.red));
+            holder.amount.setTextColor(this.context.getColor(R.color.red));
         }
         else{
             holder.priority.setBackgroundResource(R.drawable.green_shape);
             holder.amount.setText(model.getAmount());
-            holder.amount.setTextColor(this.context.getResources().getColor(R.color.dark_green));
+            holder.amount.setTextColor(this.context.getColor(R.color.dark_green));
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, UpdateTransactionActivity.class);
-                intent.putExtra("id", transactionModelArrayList.get(position).getId());
-                intent.putExtra("note", transactionModelArrayList.get(position).getNote());
-                intent.putExtra("amount", transactionModelArrayList.get(position).getAmount());
-                intent.putExtra("date", transactionModelArrayList.get(position).getDate());
-                intent.putExtra("category", transactionModelArrayList.get(position).getCategory());
-                intent.putExtra("mode", transactionModelArrayList.get(position).getMode());
-                intent.putExtra("type", transactionModelArrayList.get(position).getType());
+                intent.putExtra("id", transactionModelArrayList.get(holder.getAdapterPosition()).getId());
+                intent.putExtra("note", transactionModelArrayList.get(holder.getAdapterPosition()).getNote());
+                intent.putExtra("amount", transactionModelArrayList.get(holder.getAdapterPosition()).getAmount());
+                intent.putExtra("date", transactionModelArrayList.get(holder.getAdapterPosition()).getDate());
+                intent.putExtra("category", transactionModelArrayList.get(holder.getAdapterPosition()).getCategory());
+                intent.putExtra("mode", transactionModelArrayList.get(holder.getAdapterPosition()).getMode());
+                intent.putExtra("type", transactionModelArrayList.get(holder.getAdapterPosition()).getType());
                 context.startActivity(intent);
             }
         });
@@ -70,8 +70,8 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         return transactionModelArrayList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView note, amount, date, category, type, mode;
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
+        TextView note, amount, date, category, mode;
         View priority;
 
         public MyViewHolder(@NonNull View itemView) {
