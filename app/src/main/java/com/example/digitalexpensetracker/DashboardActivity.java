@@ -129,7 +129,12 @@ public class DashboardActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id == R.id.refresh_page){
-
+            try {
+                startActivity(new Intent(DashboardActivity.this, DashboardActivity.class));
+                finish();
+            } catch (Exception e){
+                Toast.makeText(DashboardActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
         }
         return super.onOptionsItemSelected(item);
     }

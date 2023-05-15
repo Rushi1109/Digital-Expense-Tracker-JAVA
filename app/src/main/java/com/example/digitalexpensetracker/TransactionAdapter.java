@@ -1,6 +1,7 @@
 package com.example.digitalexpensetracker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,21 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
             holder.amount.setText(model.getAmount());
             holder.amount.setTextColor(this.context.getResources().getColor(R.color.dark_green));
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, UpdateTransactionActivity.class);
+                intent.putExtra("id", transactionModelArrayList.get(position).getId());
+                intent.putExtra("note", transactionModelArrayList.get(position).getNote());
+                intent.putExtra("amount", transactionModelArrayList.get(position).getAmount());
+                intent.putExtra("date", transactionModelArrayList.get(position).getDate());
+                intent.putExtra("category", transactionModelArrayList.get(position).getCategory());
+                intent.putExtra("mode", transactionModelArrayList.get(position).getMode());
+                intent.putExtra("type", transactionModelArrayList.get(position).getType());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

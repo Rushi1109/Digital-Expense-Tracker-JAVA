@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    tools:context=".AddTransactionActivity">
+
+    <RelativeLayout
+        android:id="@+id/RL_update_transaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/LL_add_transaction"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/purple_700"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView_dashboard_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Updating Transaction details!"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LL_add_transaction"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="-30dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/border"
+            android:padding="15dp">
+
+            <EditText
+                android:id="@+id/editText_update_transaction_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border"
+                android:gravity="start"
+                android:hint="Amount"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textAlignment="textStart" />
+
+            <EditText
+                android:id="@+id/editText_update_transaction_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editText_update_transaction_amount"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/border"
+                android:gravity="start"
+                android:hint="Date"
+                android:inputType="date"
+                android:padding="15dp"
+                android:textAlignment="textStart" />
+
+            <ImageView
+                android:id="@+id/imageView_update_transaction_date_picker"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/editText_update_transaction_amount"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="-50dp"
+                android:layout_toEndOf="@id/editText_update_transaction_date"
+                android:src="@drawable/ic_calendar" />
+
+            <EditText
+                android:id="@+id/editText_update_transaction_note"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@id/editText_update_transaction_date"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/border"
+                android:gravity="start"
+                android:hint="Add note"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textAlignment="textStart" />
+
+            <Spinner
+                android:id="@+id/spinner_category_update"
+                android:background="@drawable/spinner_category_bg"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/editText_update_transaction_note"
+                android:layout_marginTop="7dp"/>
+
+            <LinearLayout
+                android:id="@+id/LL_transaction_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinner_category_update"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/border"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radio_group_expense_type_update"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+                    <RadioButton
+                        android:layout_width="8dp"
+                        android:id="@+id/radio_expense_update"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Expense" />
+
+                    <RadioButton
+                        android:layout_width="8dp"
+                        android:id="@+id/radio_income_update"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Income" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LL_transaction_type"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/border"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/radio_group_expense_mode_update"
+                    android:weightSum="3">
+                    <RadioButton
+                        android:layout_width="8dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radio_cash_update"
+                        android:layout_weight="1"
+                        android:text="Cash" />
+
+                    <RadioButton
+                        android:layout_width="8dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radio_card_update"
+                        android:layout_weight="1"
+                        android:text="Card" />
+
+                    <RadioButton
+                        android:layout_width="8dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radio_UPI_update"
+                        android:layout_weight="1"
+                        android:text="UPI" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RL_update_transaction">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/update_transaction_button"
+                android:text="Update"
+                android:layout_marginHorizontal="30dp"
+                android:layout_width="140dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/delete_transaction_button"
+                android:text="Delete"
+                android:layout_marginHorizontal="30dp"
+                android:layout_width="140dp"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
