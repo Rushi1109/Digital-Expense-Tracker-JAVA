@@ -88,13 +88,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button btnSMS = findViewById(R.id.button_sms);
-        btnSMS.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
-            }
-        });
+//        Button btnSMS = findViewById(R.id.button_sms);
+//        btnSMS.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
+//            }
+//        });
 
         // Login button activity
         Button btnLogin = findViewById(R.id.button_login_user);
@@ -139,8 +139,8 @@ public class LoginActivity extends AppCompatActivity {
                     if (firebaseUser.isEmailVerified()) {
                         Toast.makeText(LoginActivity.this, "You are logged in now", Toast.LENGTH_SHORT).show();
 
-//                        startActivity(new Intent(LoginActivity.this, UserProfileActivity.class));
-//                        finish();        // Close Login Activity
+                        startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
+                        finish();        // Close Login Activity
                     } else {
                         firebaseUser.sendEmailVerification();
                         authProfile.signOut();   // Signs out the user

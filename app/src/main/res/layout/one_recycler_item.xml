@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="2dp"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground">
+
+
+    <View
+        android:id="@+id/priority_one"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/green_shape"
+        android:layout_gravity="end">
+    </View>
+    <RelativeLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/category_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="30"
+            android:minLines="1"
+            android:ellipsize="end"
+            android:text="Your Note here"/>
+
+        <TextView
+            android:layout_below="@+id/category_one"
+            android:id="@+id/amount_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/red"
+            android:maxLength="30"
+            android:textSize="20sp"
+            android:minLines="1"
+            android:ellipsize="end"
+            android:text="200"/>
+
+        <TextView
+            android:id="@+id/note_one"
+            android:text="Category"
+            android:layout_below="@id/amount_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/date_one"
+            android:textColor="@color/black"
+            android:text="11 Sept. 2022 03:59"
+            android:layout_below="@id/note_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/expense_mode_one"
+            android:textColor="@color/black"
+            android:text="cash"
+            android:layout_below="@id/date_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

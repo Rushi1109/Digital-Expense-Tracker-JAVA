@@ -65,6 +65,17 @@
                 android:padding="15dp"
                 android:textAlignment="textStart" />
 
+            <ImageView
+                android:id="@+id/imageView_add_transaction_date_picker"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/editText_add_transaction_amount"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="-50dp"
+                android:layout_toEndOf="@id/editText_add_transaction_date"
+                android:src="@drawable/ic_calendar" />
+
             <EditText
                 android:id="@+id/editText_add_transaction_note"
                 android:layout_width="match_parent"
@@ -96,17 +107,26 @@
                 android:orientation="horizontal"
                 android:weightSum="2">
 
-                <CheckBox
-                    android:layout_width="8dp"
+                <RadioGroup
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Expense" />
+                    android:id="@+id/radio_group_expense_type"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+                    <RadioButton
+                        android:layout_width="8dp"
+                        android:id="@+id/radio_expense"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Expense" />
 
-                <CheckBox
-                    android:layout_width="8dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Income" />
+                    <RadioButton
+                        android:layout_width="8dp"
+                        android:id="@+id/radio_income"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Income" />
+                </RadioGroup>
 
             </LinearLayout>
 
@@ -119,23 +139,33 @@
                 android:orientation="horizontal"
                 android:weightSum="3">
 
-                <CheckBox
-                    android:layout_width="8dp"
+                <RadioGroup
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Cash" />
+                    android:orientation="horizontal"
+                    android:id="@+id/radio_group_expense_mode"
+                    android:weightSum="3">
+                    <RadioButton
+                        android:layout_width="8dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radio_cash"
+                        android:layout_weight="1"
+                        android:text="Cash" />
 
-                <CheckBox
-                    android:layout_width="8dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Card" />
+                    <RadioButton
+                        android:layout_width="8dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radio_card"
+                        android:layout_weight="1"
+                        android:text="Card" />
 
-                <CheckBox
-                    android:layout_width="8dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="UPI" />
+                    <RadioButton
+                        android:layout_width="8dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radio_UPI"
+                        android:layout_weight="1"
+                        android:text="UPI" />
+                </RadioGroup>
 
             </LinearLayout>
 
